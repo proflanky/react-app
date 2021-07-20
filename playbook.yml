@@ -20,7 +20,7 @@
       owner: "{{ ansible_user }}"
       group: "{{ ansible_user }}"
       mode: "0777"
-=======
+
 #     - name: copy files
 #       ansible.builtin.copy:
 #       src: $(build.artifactstagingdirectory)
@@ -28,7 +28,6 @@
 #       owner: "{{ ansible_user }}"
 #       group: "{{ ansible_user }}"
 #       mode: "0777"
->>>>>>> e0077d457ffec2b64479382c1c31b608eabdb4e0
 
     - name: deploy Docker Compose stack
       community.docker.docker_compose:
