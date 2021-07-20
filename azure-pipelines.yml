@@ -9,6 +9,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-- task: DownloadFileshareArtifacts@1
+stages:
+- task: PublishBuildArtifacts@1
   inputs:
-    downloadPath: '$(System.ArtifactsDirectory)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
