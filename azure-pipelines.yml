@@ -9,7 +9,6 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-- task: CopyFiles@2
+- task: DownloadFileshareArtifacts@1
   inputs:
-    Contents: '**'
-    TargetFolder: 
+    downloadPath: '$(System.ArtifactsDirectory)'
