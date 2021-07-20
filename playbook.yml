@@ -1,0 +1,23 @@
+- name: set up environment
+  hosts: all
+  become: yes
+  tasks:
+    - name: install docker
+      package:
+        name: 
+          - docker
+          - docker-compose
+        state: present
+    - name: copy files
+      ansible.builtin.copy:
+      src: $(build.artifactstagingdirectory)
+      dest: /home/azureuser/
+      owner: "{{ ansible_user }}"
+      group: "{{ ansible_user }}"
+      mode: "0777"
+
+    - name: deploy Docker Compose stack
+      community.docker.docker_compose:
+      project_src: /home/azureuser/
+
+
