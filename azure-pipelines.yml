@@ -12,8 +12,11 @@ pool:
 steps:
 - task: CopyFiles@2
   inputs:
-    Contents: '_buildOutput/**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    SourceFolder: '**'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)'
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
-  condition: succeeded()
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
