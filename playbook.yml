@@ -3,9 +3,15 @@
   become: yes
   tasks:
     - name: install docker
-      package:
-        name: docker
+      apt:
+        name: 
+          - docker
+          - docker-compose
         state: present
+    - name: Start service docker if not started
+      service:
+        name: docker
+        state: started
     - name: copy files
       ansible.builtin.copy:
       src: $(build.artifactstagingdirectory)

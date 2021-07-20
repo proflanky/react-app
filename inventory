@@ -1,3 +1,3 @@
 [hosts]
 
-$host     ansible_connection=ssh   ansible_user=$username    ansible_password=$password
+$host     ansible_connection=ssh   ansible_user=_ansible_user    ansible_password=_ansible_password
