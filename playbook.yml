@@ -4,9 +4,7 @@
   tasks:
     - name: install docker
       package:
-        name: 
-          - docker
-          - docker-compose
+        name: docker
         state: present
     - name: copy files
       ansible.builtin.copy:
