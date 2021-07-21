@@ -23,3 +23,11 @@ As a requirement I already had npm installed on my machine.
 7. Executed the playbook
 
 *The inventory was placed in variable on azure pipeline to avoid checking in sensitive data in our repository*
+
+## Why was the project executed this way?
+The client did not want to use a public docker registry amnd is not will to host 1.
+The client is comfortable creating images on the machine and running it with the specified config files.
+
+## What could have been done differently?
+We could have built the code and packaged in a docker image. 
+Have it pushed to a container registry and have ansible pull the image and deploy that container to the target host
