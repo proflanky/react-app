@@ -8,14 +8,14 @@
           - docker
           - docker-compose
         state: present
-    - name: copy files
-      copy:
-        src: /home/vsts/work/r1/a/_proflanky.react-app/drop
-        dest: /tmp/azureuser
-        owner: azureuser
-        group: azureuser
-        mode: "0777"
-        remote_src: yes
+    # - name: copy files
+    #   copy:
+    #     src: /home/vsts/work/r1/a/_proflanky.react-app/drop
+    #     dest: /tmp/azureuser
+    #     owner: azureuser
+    #     group: azureuser
+    #     mode: "0777"
+    #     remote_src: yes
     - name: Start service docker if not started
       service:
         name: docker
