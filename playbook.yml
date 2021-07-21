@@ -10,7 +10,7 @@
         state: present
     - name: copy files
       ansible.builtin.copy:
-        src: /home/vsts/work/r1/a/_proflanky.react-app/drop/playbook.yml
+        src: /home/vsts/work/r1/a/_proflanky.react-app/drop/
         dest: /home/azureuser/
         mode: "0777"
         remote_src: yes
