@@ -1,3 +1,0 @@
-[hosts]
-
-drogon.eastus.cloudapp.azure.com    ansible_connection=ssh   ansible_user=_ansible_user    ansible_password=_ansible_password
