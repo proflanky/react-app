@@ -1,10 +1,10 @@
 - name: set up environment
-  hosts: all
+  hosts: drogon.eastus.cloudapp.azure.com
   become: yes
   tasks:
     - name: install docker
       apt:
-        name: 
+        name:
           - docker
           - docker-compose
         state: present
@@ -13,13 +13,9 @@
       service:
         name: docker
         state: started
-    - name: copy files
-      ansible.builtin.copy:
-      src: ./_proflanky.react-app/drop/
-      dest: /home/azureuser/
-      owner: "{{ ansible_user }}"
-      group: "{{ ansible_user }}"
-      mode: "0777"
+    - name: build phase
+      shell:
+          cmd: docker-compose up -d
 
 #     - name: copy files
 #       ansible.builtin.copy:
@@ -29,8 +25,5 @@
 #       group: "{{ ansible_user }}"
 #       mode: "0777"
 
-    - name: deploy Docker Compose stack
-      community.docker.docker_compose:
-      project_src: /home/azureuser/
 
 
