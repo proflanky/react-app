@@ -8,7 +8,12 @@
           - docker
           - docker-compose
         state: present
-
+    - name: copy files
+      ansible.builtin.copy:
+        src: /home/vsts/work/r1/a/_proflanky.react-app/drop/playbook.yml
+        dest: /home/azureuser/
+        mode: "0777"
+        remote_src: yes
     - name: Start service docker if not started
       service:
         name: docker
@@ -17,13 +22,7 @@
       shell:
           cmd: docker-compose up -d
 
-#     - name: copy files
-#       ansible.builtin.copy:
-#       src: $(build.artifactstagingdirectory)
-#       dest: /home/azureuser/
-#       owner: "{{ ansible_user }}"
-#       group: "{{ ansible_user }}"
-#       mode: "0777"
+
 
 
 
