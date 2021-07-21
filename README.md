@@ -22,4 +22,4 @@ As a requirement I already had npm installed on my machine.
 6. Copied over the artifacts to the remote ubuntu VM
 7. Executed the playbook
 
-{The inventory was placed in variable on azure pipeline to avoid checking in sensitive data in our repository}
+*The inventory was placed in variable on azure pipeline to avoid checking in sensitive data in our repository*
