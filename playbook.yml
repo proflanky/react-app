@@ -1,5 +1,5 @@
 - name: set up environment
-  hosts: drogon.eastus.cloudapp.azure.com
+  hosts: localhost
   become: yes
   tasks:
     - name: install docker
