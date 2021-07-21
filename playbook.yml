@@ -1,0 +1,30 @@
+- name: set up environment
+  hosts: all
+  become: yes
+  tasks:
+    - name: install docker
+      apt:
+        name:
+          - docker
+          - docker-compose
+        state: present
+    - name: copy files
+      copy:
+        src: /home/vsts/work/r1/a/_proflanky.react-app/drop
+        dest: /home/azureuser
+        owner: azureuser
+        group: azureuser
+        mode: "0777"
+        remote_src: yes
+    - name: Start service docker if not started
+      service:
+        name: docker
+        state: started
+    - name: build phase
+      shell:
+          cmd: docker-compose up -d
+
+
+
+
+
