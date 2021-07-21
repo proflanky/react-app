@@ -3,8 +3,8 @@
 ### What to achieve
 1. Deploy React App to the Nginx container and expose to the internet
 2. Automate the dployment using ansible
-3. All this task should be done in Azure DevOps
-4. The containers should run a VM
+3. All these task should be done in Azure DevOps
+4. The containers should run in a VM
 
 Execution steps
 1. Created a boilerplate react app
