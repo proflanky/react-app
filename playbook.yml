@@ -23,6 +23,7 @@
     - name: build phase
       shell:
           cmd: docker-compose up -d
+          chdir: /home/azureuser
 
 
 
